@@ -1,0 +1,19 @@
+Byte accounting: archive, stop-download and progressive-refinement volume
+======================================================================================================================
+ level  tiles  V_stop_MB  V_cum_MB  V_stop_share_of_archive  V_cum_share_of_archive  V_cum_over_V_stop  MB_per_1000m2_surface  rom_side_channel_MB  rom_stop_plus_side_MB  pct_of_V_stop_fine  pct_of_archive
+    14     73    37.8055   37.8055                   0.0153                  0.0153             1.0000                 0.0902               0.1102                37.9157              0.0266          0.0153
+    15     73    42.6176   71.9444                   0.0172                  0.0291             1.6881                 0.1045               0.1102                42.7278              0.0300          0.0173
+    16     73    57.9590  129.0850                   0.0234                  0.0522             2.2272                 0.1464               0.1102                58.0693              0.0408          0.0235
+    17     73    94.4492  223.0806                   0.0382                  0.0902             2.3619                 0.2437               0.1102                94.5594              0.0664          0.0382
+    18     73   213.5484  436.6289                   0.0863                  0.1765             2.0446                 0.5649               0.1102               213.6586              0.1501          0.0864
+    19    217   317.7680  630.7660                   0.1285                  0.2550             1.9850                 0.8874               0.1102               317.8782              0.2233          0.1285
+    20    801   423.4206  818.6632                   0.1712                  0.3310             1.9335                 1.2001               0.1102               423.5309              0.2975          0.1713
+    21   2866   698.6011 1279.4393                   0.2825                  0.5173             1.8314                 1.9801               0.1102               698.7114              0.4908          0.2825
+    22   9260  1289.7780 2253.2960                   0.5215                  0.9111             1.7470                 3.6518               0.1102              1289.8882              0.9060          0.5216
+    23  12139  1423.6912 2473.1256                   0.5757                  1.0000             1.7371                 4.0300               0.1102              1423.8014              1.0001          0.5757
+
+V_archive = 2.473 GB (16744 b3dm files, each counted once); V_stop(23) = 1423.7 MB; V_cum(23) = 2473.1 MB; naive sum over the ten cuts = 4599.6 MB from 25648 tile references to 16744 distinct files.
+
+the cuts form a nested cover, not a disjoint partition across levels: a file belongs to a contiguous run of cuts, which is why the sum over cuts overstates the delivery by 1.86x. Cost statements therefore name their denominator.
+
+worked example, lambda = 16 with the 8-mode codec: V_stop = 58.0 MB, side channel 0.11 MB, total 58.1 MB = 4.08 % of V_stop(23) and 2.35 % of the archive; reached progressively the same view costs 129.1 MB (5.22 % of the archive).

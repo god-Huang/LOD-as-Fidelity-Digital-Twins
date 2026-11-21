@@ -1,0 +1,36 @@
+Effort-weighted re-scoring of the recorded refinement trajectories
+====================================================================================================
+per-branch survey effort spans 1.00-971.00 median units (level-23 leaf-tile overlap), so equal-branch budgeting is not effort-neutral
+
+base level 14: RANDOM effort-AULC 0.13797
+  strategy  AULC(equal)  AULC(effort)       sd  effort->5%  med effort of picks  vs RANDOM
+   DECL_ge      0.14096       0.14072  0.00000         nan                 1.00      1.020
+       EAL      0.12642       0.12524  0.00000         nan                 1.00      0.908
+       GEO      0.14116       0.14222  0.00000         nan                 1.00      1.031
+    RANDOM      0.13561       0.13797  0.00514         nan                 1.00      1.000
+       SEN      0.13104       0.12452  0.00000         nan                 1.00      0.903
+       UNC      0.14048       0.14079  0.00000         nan                 1.00      1.020
+   EAL vs RANDOM on the effort scale: t=-7.01, p=2.10e-04
+
+base level 16: RANDOM effort-AULC 0.06073
+  strategy  AULC(equal)  AULC(effort)       sd  effort->5%  med effort of picks  vs RANDOM
+   DECL_ge      0.06395       0.06390  0.00000         nan                 1.00      1.052
+       EAL      0.06040       0.05985  0.00000         nan                 1.00      0.985
+       GEO      0.05342       0.05031  0.00000       137.0                 1.00      0.828
+    RANDOM      0.06034       0.06073  0.00552        90.5                 1.00      1.000
+       SEN      0.06049       0.05979  0.00000         nan                 1.00      0.985
+       UNC      0.06363       0.06339  0.00000         nan                 1.00      1.044
+   EAL vs RANDOM on the effort scale: t=-0.45, p=6.64e-01
+
+base level 18: RANDOM effort-AULC 0.05275
+  strategy  AULC(equal)  AULC(effort)       sd  effort->5%  med effort of picks  vs RANDOM
+   DECL_ge      0.05492       0.05499  0.00000         nan                 1.00      1.042
+       EAL      0.04549       0.05391  0.00000      2035.0                 1.00      1.022
+       GEO      0.04015       0.03932  0.00000         5.0                 1.00      0.745
+    RANDOM      0.05289       0.05275  0.00253       340.0                 1.00      1.000
+       SEN      0.05190       0.05482  0.00000      3014.0                 1.00      1.039
+       UNC      0.04181       0.04001  0.00000         7.0                 1.00      0.758
+   EAL vs RANDOM on the effort scale: t=1.30, p=2.35e-01
+
+AULC(equal) integrates the recorded trajectory against the number of branches,
+AULC(effort) integrates the SAME trajectory against cumulative survey effort.

@@ -1,0 +1,24 @@
+Ventilation network solver — verification report
+============================================================================================================
+[PASS] V1_series_parallel_Req             relative error of equivalent resistance        = 9.960e-15 (thr 1.0e-06)
+        analytic 0.0181143 vs solver 0.0181143 (Newton 8 it, converged=True)
+[PASS] V1_series_parallel_flows           max |dQ| / Q_total                             = 2.101e-14 (thr 1.0e-06)
+        analytic [5.0, 2.74801, 2.25199, 1.60975, 1.13826] vs solver [5.0, 2.74801, 2.25199, 1.60975, 1.13826]
+[PASS] V1_grid_lattice_convergence        Newton iterations                              = 7.000e+00 (thr 1.0e+02)
+        head dp=-22.97 Pa, mine resistance Re=0.025521 N s^2 m^-8, converged=True
+[PASS] V2_mass_conservation               max |continuity residual| / Q_total            = 1.132e-14 (thr 1.0e-09)
+        12 nodes, 17 branches, Q_total=30.0 m3/s
+[PASS] V3_quadratic_homogeneity_dp        max |dp(f)/dp(1) - f^2|                        = 5.373e-14 (thr 1.0e-06)
+        f=(0.25, 0.5, 2.0, 4.0), observed [0.0625, 0.25, 4.0, 16.0], expected [0.0625, 0.25, 4.0, 16.0]
+[PASS] V3_quadratic_homogeneity_dQ        max |Q(f)/(f Q(1)) - 1|                        = 1.282e-12 (thr 1.0e-06)
+        observed [1.0, 1.0, 1.0, 1.0]
+[PASS] V4_subdivision_invariance          max relative branch-flow drift                 = 2.667e-13 (thr 1.0e-06)
+        2/4/8 subdivisions, worst drift 2.67e-13
+[PASS] V5_regularity                      min |branch flow| (m3/s)                       = 1.508e+00 (thr 1.0e-06)
+        the conductance cap only engages below |Q| ~ 1e-6 m3/s
+[PASS] V6_energy_balance                  |sum dp_i Q_i - sum R|Q|^3| / W                = 0.000e+00 (thr 1.0e-09)
+        branch dissipation 689.06 W, head power 689.06 W, fan-equivalent 689.06 W
+[PASS] V7_loop_formulation_crosscheck     max |dQ| / max|Q| between flow-space and pressure-space solvers = 1.848e-14 (thr 1.0e-04)
+        fundamental-loop residual 3.11e-15 Pa
+============================================================================================================
+tests: 10   passed: 10   all passed: True

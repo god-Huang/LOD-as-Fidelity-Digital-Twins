@@ -1,0 +1,112 @@
+Weight-free evaluation: Pareto position over (streamed cost, physical quality)
+================================================================================================================
+branch-error population diagnostic (L14 versus the L23 reference):
+flow_band  n_branches  frac_gt5  mean_abs_dQ  share_of_network  share_of_air_power
+  [0,0.2)         200    0.0150       0.0182            0.5195              0.0000
+  [0.2,1)           6    1.0000       1.4365            0.0156              0.0000
+    [1,3)          27    0.9630       1.4110            0.0701              0.0001
+    [3,8)          54    0.8333       1.1665            0.1403              0.0034
+[8,1e+09)          98    0.5000       2.0363            0.2545              0.9965
+  200 of 385 branches carry |Q| < 0.2 m3/s (they pass the 5 % test almost by definition);
+  5 %-criterion failure rate: 0.335 over every branch, 0.670 over the 179 branches with |Q| > 1 m3/s;
+  branches that fail the 5 % test carry 0.181 of the dissipated air power.
+
+--- A_all_branch / decision_rate ---
+Empty DataFrame
+Columns: [config, kind, cost_MB, decision_rate, on_front, dominated_by, best_at_this_cost, efficiency_ratio]
+Index: []
+
+--- A_all_branch / nRMSE_active ---
+       config       kind   cost_MB  nRMSE_active  on_front  dominated_by  best_at_this_cost  efficiency_ratio
+   native L14 native_LOD   37.8055        0.1412      True             0             0.1412            1.0000
+LOD-ROM8 @L14    LOD-ROM   37.9189        0.1112      True             0             0.1112            1.0000
+   native L15 native_LOD   42.6176        0.1295     False             1             0.1112            0.8590
+LOD-ROM8 @L15    LOD-ROM   42.7455        0.1117     False             1             0.1112            0.9959
+   native L16 native_LOD   57.9590        0.0641      True             0             0.0641            1.0000
+LOD-ROM8 @L16    LOD-ROM   58.1329        0.0130      True             0             0.0130            1.0000
+   native L17 native_LOD   94.4492        0.0591     False             1             0.0130            0.2204
+LOD-ROM8 @L17    LOD-ROM   94.7325        0.0113      True             0             0.0113            1.0000
+   native L18 native_LOD  213.5484        0.0551     False             2             0.0113            0.2055
+LOD-ROM8 @L18    LOD-ROM  214.1890        0.0129     False             1             0.0113            0.8778
+   native L19 native_LOD  317.7680        0.0572     False             4             0.0113            0.1980
+LOD-ROM8 @L19    LOD-ROM  318.7213        0.0435     False             3             0.0113            0.2603
+   native L20 native_LOD  423.4206        0.0375     False             3             0.0113            0.3021
+LOD-ROM8 @L20    LOD-ROM  424.6909        0.0061      True             0             0.0061            1.0000
+   native L21 native_LOD  698.6011        0.0241     False             4             0.0061            0.2524
+LOD-ROM8 @L21    LOD-ROM  700.6969        0.0134     False             4             0.0061            0.4529
+   native L22 native_LOD 1289.7780        0.0015      True             0             0.0015            1.0000
+LOD-ROM8 @L22    LOD-ROM 1293.6473        0.0006      True             0             0.0006            1.0000
+   native L23 native_LOD 1423.6912        0.0000      True             0             0.0000               NaN
+
+--- B_flow_branch / decision_rate ---
+        config           kind   cost_MB  decision_rate  on_front  dominated_by  best_at_this_cost  efficiency_ratio
+    native L14     native_LOD   37.8055         0.3326      True             0             0.3326            1.0000
+CP-NO L14->L20 CP-NO_operator   37.8055         0.3082     False             5             0.3326            0.9267
+CP-NO L14->L18 CP-NO_operator   37.8055         0.3071     False            10             0.3326            0.9233
+CP-NO L14->L19 CP-NO_operator   37.8055         0.3082     False             6             0.3326            0.9266
+CP-NO L14->L17 CP-NO_operator   37.8055         0.3087     False             2             0.3326            0.9281
+CP-NO L14->L16 CP-NO_operator   37.8055         0.3088     False             1             0.3326            0.9285
+CP-NO L14->L15 CP-NO_operator   37.8055         0.3085     False             4             0.3326            0.9276
+CP-NO L14->L14 CP-NO_operator   37.8055         0.3079     False             9             0.3326            0.9258
+CP-NO L14->L22 CP-NO_operator   37.8055         0.3082     False             7             0.3326            0.9265
+CP-NO L14->L22 CP-NO_operator   37.8055         0.3082     False             7             0.3326            0.9265
+CP-NO L14->L21 CP-NO_operator   37.8055         0.3086     False             3             0.3326            0.9277
+    native L15     native_LOD   42.6176         0.3558      True             0             0.3558            1.0000
+CP-NO L16->L14 CP-NO_operator   57.9590         0.3098     False             3             0.4495            0.6892
+    native L16     native_LOD   57.9590         0.4495      True             0             0.4495            1.0000
+CP-NO L16->L16 CP-NO_operator   57.9590         0.3089     False            11             0.4495            0.6873
+CP-NO L16->L15 CP-NO_operator   57.9590         0.3092     False             9             0.4495            0.6880
+CP-NO L16->L19 CP-NO_operator   57.9590         0.3098     False             3             0.4495            0.6892
+CP-NO L16->L20 CP-NO_operator   57.9590         0.3098     False             5             0.4495            0.6891
+CP-NO L16->L21 CP-NO_operator   57.9590         0.3095     False             8             0.4495            0.6885
+CP-NO L16->L22 CP-NO_operator   57.9590         0.3096     False             6             0.4495            0.6889
+CP-NO L16->L22 CP-NO_operator   57.9590         0.3096     False             6             0.4495            0.6889
+CP-NO L16->L18 CP-NO_operator   57.9590         0.3089     False            12             0.4495            0.6872
+CP-NO L16->L17 CP-NO_operator   57.9590         0.3092     False            10             0.4495            0.6879
+    native L17     native_LOD   94.4492         0.4889      True             0             0.4889            1.0000
+    native L18     native_LOD  213.5484         0.5735      True             0             0.5735            1.0000
+    native L19     native_LOD  317.7680         0.6123      True             0             0.6123            1.0000
+    native L20     native_LOD  423.4206         0.6726      True             0             0.6726            1.0000
+    native L21     native_LOD  698.6011         0.6910      True             0             0.6910            1.0000
+    native L22     native_LOD 1289.7780         1.0000      True             0             1.0000            1.0000
+
+--- B_flow_branch / nRMSE_active ---
+        config           kind   cost_MB  nRMSE_active  on_front  dominated_by  best_at_this_cost  efficiency_ratio
+    native L14     native_LOD   37.8055        0.1416     False            10             0.0863            0.6098
+CP-NO L14->L20 CP-NO_operator   37.8055        0.0864     False             6             0.0863            0.9991
+CP-NO L14->L18 CP-NO_operator   37.8055        0.0863      True             0             0.0863            1.0000
+CP-NO L14->L19 CP-NO_operator   37.8055        0.0864     False             5             0.0863            0.9992
+CP-NO L14->L17 CP-NO_operator   37.8055        0.0863     False             1             0.0863            0.9999
+CP-NO L14->L16 CP-NO_operator   37.8055        0.0864     False             2             0.0863            0.9997
+CP-NO L14->L15 CP-NO_operator   37.8055        0.0864     False             3             0.0863            0.9997
+CP-NO L14->L14 CP-NO_operator   37.8055        0.0865     False             9             0.0863            0.9984
+CP-NO L14->L22 CP-NO_operator   37.8055        0.0864     False             7             0.0863            0.9990
+CP-NO L14->L22 CP-NO_operator   37.8055        0.0864     False             7             0.0863            0.9990
+CP-NO L14->L21 CP-NO_operator   37.8055        0.0864     False             4             0.0863            0.9992
+    native L15     native_LOD   42.6176        0.1291     False            10             0.0863            0.6687
+CP-NO L16->L14 CP-NO_operator   57.9590        0.0865     False            15             0.0669            0.7732
+    native L16     native_LOD   57.9590        0.0669      True             0             0.0669            1.0000
+CP-NO L16->L16 CP-NO_operator   57.9590        0.0864     False            13             0.0669            0.7739
+CP-NO L16->L15 CP-NO_operator   57.9590        0.0864     False            12             0.0669            0.7739
+CP-NO L16->L19 CP-NO_operator   57.9590        0.0865     False            17             0.0669            0.7732
+CP-NO L16->L20 CP-NO_operator   57.9590        0.0865     False            18             0.0669            0.7732
+CP-NO L16->L21 CP-NO_operator   57.9590        0.0865     False            16             0.0669            0.7732
+CP-NO L16->L22 CP-NO_operator   57.9590        0.0865     False            19             0.0669            0.7730
+CP-NO L16->L22 CP-NO_operator   57.9590        0.0865     False            19             0.0669            0.7730
+CP-NO L16->L18 CP-NO_operator   57.9590        0.0864     False             3             0.0669            0.7745
+CP-NO L16->L17 CP-NO_operator   57.9590        0.0864     False             6             0.0669            0.7743
+    native L17     native_LOD   94.4492        0.0622      True             0             0.0622            1.0000
+    native L18     native_LOD  213.5484        0.0586      True             0             0.0586            1.0000
+    native L19     native_LOD  317.7680        0.0553      True             0             0.0553            1.0000
+    native L20     native_LOD  423.4206        0.0379      True             0             0.0379            1.0000
+    native L21     native_LOD  698.6011        0.0248      True             0             0.0248            1.0000
+    native L22     native_LOD 1289.7780        0.0000      True             0             0.0000               NaN
+
+
+cost-equivalence of the learned operator, stated on both criteria:
+  native L22 attains a decision rate of 1.000 on the flowing-branch criterion; no operator configuration reaches beyond 0.310, so on the decision criterion the operator does not substitute for measurement at all
+  on the aggregate energy criterion the best operator error (0.0863) equals native native L15 (0.1291) at 42.6 MB versus 37.8 MB streamed, a saving of 1.13x only
+  interpretation: the operator interpolates the smooth component of the fidelity correction (the systematic part of the section error) but not the branch-specific component, and ventilation decisions are made branch by branch
+  at matched cost (37.8 MB): native L14 nRMSE 0.1416 / decision 0.333 versus CP-NO L14->L22 0.0864 / 0.308 (error ratio 0.610, decision change -0.024)
+  the two criteria disagree: the operator halves the aggregate error at the cost of the coarsest level, but it does not convert extra bytes into more correct per-branch decisions; per-branch error is dominated by systematic section errors on individual roadways, which a smooth global operator does not repair.
+  the scalar DT-Q is therefore retained only as a convenience summary; the Pareto position above uses no weights at all.

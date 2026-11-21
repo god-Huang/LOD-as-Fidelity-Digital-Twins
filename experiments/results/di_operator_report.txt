@@ -1,0 +1,36 @@
+Conservation-preserving cross-fidelity operator for the ventilation solution
+============================================================================================================
+network 330 nodes / 385 branches, cycle-space dimension 56, reference fidelity level 22
+500 scenarios (per-branch lognormal alpha, sigma=0.35; Q_total in [20, 120] m^3/s), 350 train / 150 held-out scenarios
+trained at levels [14, 16], evaluated at all levels WITHOUT retraining
+
+median nRMSE of branch airflows over held-out scenarios (active branches, |Q|>1):
+test_level      14      15      16      17      18      19      20      21      22
+model                                                                             
+CP-NO       0.0872  0.0872  0.0872  0.0871  0.0871  0.0872  0.0872  0.0872  0.0872
+CP-NO+loop  0.0866  0.0864  0.0865  0.0864  0.0864  0.0865  0.0865  0.0865  0.0865
+MLP-free    0.0884  0.0884  0.0884  0.0884  0.0884  0.0884  0.0884  0.0884  0.0884
+
+same for the native solve-at-this-LOD baseline:
+test_level
+14    0.1416
+15    0.1291
+16    0.0669
+17    0.0622
+18    0.0586
+19    0.0553
+20    0.0379
+21    0.0248
+22    0.0000
+
+transfer penalty (zero-shot / same-level, per model):
+   CP-NO        same-level 0.0872  zero-shot 0.0872  ratio 1.000
+   CP-NO+loop   same-level 0.0865  zero-shot 0.0865  ratio 1.000
+   MLP-free     same-level 0.0884  zero-shot 0.0884  ratio 1.000
+
+mass-conservation residual of every learned model (m^3/s):
+   CP-NO        max 3.783e-06   mean 3.783e-06
+   CP-NO+loop   max 3.783e-06   mean 3.783e-06
+   MLP-free     max 8.586e-01   mean 6.716e-01
+
+total runtime 492 s

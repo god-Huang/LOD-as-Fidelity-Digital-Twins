@@ -1,0 +1,17 @@
+Tuned soft-constraint (penalty) baseline against conservation by construction
+============================================================================================================
+task: level 14, 400 scenarios (per-branch lognormal alpha, sigma = 0.35, Q_total in [20,120] m3/s), stage 12's unconstrained branch-space network and capacity; penalty weight swept over [0.0, 1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0]
+
+    beta  max_continuity_residual_m3s  nRMSE_active  frac_branches_gt5pct  decision_rate  nRMSE_cost_vs_beta0  cpno_reference_residual_m3s  reaches_construction
+     0.0                     4.147203      0.084839              0.686170       0.313830             0.000000                     0.000004                 False
+     1.0                     1.474124      0.085992              0.691256       0.308744             0.001153                     0.000004                 False
+    10.0                     1.547960      0.086285              0.691396       0.308604             0.001445                     0.000004                 False
+   100.0                     1.295754      0.088158              0.698582       0.301418             0.003319                     0.000004                 False
+  1000.0                     1.269484      0.177968              0.862402       0.137598             0.093128                     0.000004                 False
+ 10000.0                     1.322067      0.373624              0.914147       0.085853             0.288785                     0.000004                 False
+100000.0                     1.331513      0.401282              0.918673       0.081327             0.316442                     0.000004                 False
+
+CP-NO (construction, stage 12) continuity residual: 3.783e-06 m3/s
+no penalty weight in the swept range approaches the construction: the smallest residual reachable is 1.269e+00 m3/s, 335576x above the construction, and increasing beta trades accuracy without bounding the balance
+
+the claim is stated as measured: a soft constraint lowers the residual only by paying in accuracy and without a bound that survives a worse optimum, whereas the cycle-space parameterisation holds it at floating-point level for every theta.

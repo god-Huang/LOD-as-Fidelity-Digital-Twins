@@ -1,0 +1,44 @@
+Error-aware active refinement: budgeted re-survey of roadway branches
+================================================================================================================
+reference = level 23 everywhere; budget = 40 branches; 8 seeds; error = relative-energy nRMSE over active branches (same definition as 08)
+
+base fidelity level 14   (nRMSE with nothing re-surveyed: 0.1412)
+  strategy      AULC       sd     final  budget->5%  /RANDOM    paired p
+    RANDOM   0.13561  0.01349   0.13275        41.0    1.000           -
+       GEO   0.14116  0.00000   0.13857        41.0    1.041    2.83e-01
+   DECL_ge   0.14096  0.00000   0.14055        41.0    1.039    2.99e-01
+       UNC   0.14048  0.00000   0.13998        41.0    1.036    3.42e-01
+       SEN   0.13104  0.00000   0.12859        41.0    0.966    3.70e-01
+       EAL   0.12642  0.00000   0.06787        41.0    0.932    9.54e-02
+
+base fidelity level 16   (nRMSE with nothing re-surveyed: 0.0641)
+  strategy      AULC       sd     final  budget->5%  /RANDOM    paired p
+    RANDOM   0.06034  0.00439   0.05729        34.4    1.000           -
+       GEO   0.05342  0.00000   0.04194        22.0    0.885    2.95e-03
+   DECL_ge   0.06395  0.00000   0.06352        41.0    1.060    5.28e-02
+       UNC   0.06363  0.00000   0.06216        41.0    1.055    7.17e-02
+       SEN   0.06049  0.00000   0.05717        41.0    1.002    9.26e-01
+       EAL   0.06040  0.00000   0.05682        41.0    1.001    9.71e-01
+
+base fidelity level 18   (nRMSE with nothing re-surveyed: 0.0551)
+  strategy      AULC       sd     final  budget->5%  /RANDOM    paired p
+    RANDOM   0.05289  0.00208   0.05077        29.2    1.000           -
+       GEO   0.04015  0.00000   0.03437         5.0    0.759    5.22e-07
+   DECL_ge   0.05492  0.00000   0.05324        41.0    1.038    2.82e-02
+       UNC   0.04181  0.00000   0.03785         7.0    0.791    1.36e-06
+       SEN   0.05190  0.00000   0.04683        27.0    0.981    2.19e-01
+       EAL   0.04549  0.00000   0.03698        18.0    0.860    2.03e-05
+
+independent diagnostic: how well does each acquisition signal name the branches
+that actually carry the error? Spearman rank correlation over the 385 branches
+
+                                   rho_vs_true_resistance_error  rho_vs_true_flow_error
+signal                                                                                 
+DECL_ge (format label)                                   -0.070                   0.120
+GEO (adjacent-level disagreement)                         0.522                   0.011
+adjacent-level resistance change                          0.562                   0.005
+adjoint influence                                        -0.085                   0.852
+
+AULC = mean nRMSE along the refinement trajectory (lower is better)
+budget->5% = branches that must be re-surveyed before the first sub-5 % error
+DECL_ge is the naive 'trust the format's own geometricError label' strategy

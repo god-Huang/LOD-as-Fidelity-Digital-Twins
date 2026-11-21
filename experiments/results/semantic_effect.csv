@@ -1,0 +1,2 @@
+quantities,nRMSE_semantics_vs_classblind,frac_branches_gt5pct,max_dQ_m3s,Re_classblind,Re_semantics,rel_change_Re,head_classblind_Pa,head_semantics_Pa,rel_change_head_Pa,air_power_change_ratio,rel_change_Re_at_alpha_scale_0.75,rel_change_Re_at_alpha_scale_1.25
+branch airflow and mine head,0.028806340456744354,0.33519553072625696,1.65949673149982,0.0028176183647406344,0.004205231851848685,0.49247744281925915,10.143426113066283,15.138834666655265,0.4924774428192593,1.4924774428192593,0.11935808211444444,0.865596803524074

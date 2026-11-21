@@ -1,0 +1,19 @@
+Cross-discretisation test: trained on one (n_s, N_theta) grid, applied to all nine
+============================================================================================================
+fidelity input level 14, truth level 23, branch-disjoint folds, 3 seeds, correction represented in K=8 angular Fourier modes
+
+ test_ns  test_nth  same_grid     op  native    gain  op_testgrid  native_testgrid  n
+      16        12      False 0.2370  0.2122 -0.0248       0.2437           0.1555  3
+      16        24      False 0.2139  0.1520 -0.0618       0.2155           0.1524  3
+      16        48      False 0.2077  0.1438 -0.0639       0.1990           0.1600  3
+      32        12      False 0.2347  0.2090 -0.0256       0.2330           0.1513  3
+      32        24       True 0.2165  0.1470 -0.0695       0.2189           0.1454  3
+      32        48      False 0.2100  0.1426 -0.0673       0.1982           0.1548  3
+      64        12      False 0.2402  0.2081 -0.0321       0.2408           0.1513  3
+      64        24      False 0.2189  0.1465 -0.0725       0.2167           0.1459  3
+      64        48      False 0.2053  0.1459 -0.0594       0.1996           0.1534  3
+
+operator error on the training grid 0.2165; mean over the eight unseen grids 0.2164; invariance ratio 0.999; worst/best ratio across unseen grids 1.17
+native LOD switching on the same grids: median 0.1470
+
+runtime 21 s

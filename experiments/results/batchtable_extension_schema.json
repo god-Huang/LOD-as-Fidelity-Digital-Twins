@@ -1,0 +1,63 @@
+{
+ "schema": "mine-roadway-semantics/v1",
+ "source": "WebP texture moments and face geometry of the delivered b3dm tiles",
+ "selected_k": 8,
+ "selection_criterion": "BIC over k=3..8",
+ "classes": [
+  {
+   "id": 0,
+   "support_class": "aperture_void",
+   "alpha_N_s2_m4": 0.006,
+   "faces": 101479
+  },
+  {
+   "id": 1,
+   "support_class": "floor_debris",
+   "alpha_N_s2_m4": 0.0078,
+   "faces": 80221
+  },
+  {
+   "id": 2,
+   "support_class": "floor_debris_2",
+   "alpha_N_s2_m4": 0.0058,
+   "faces": 42442
+  },
+  {
+   "id": 3,
+   "support_class": "mixed_rock",
+   "alpha_N_s2_m4": 0.0058,
+   "faces": 14303
+  },
+  {
+   "id": 4,
+   "support_class": "mixed_rock_2",
+   "alpha_N_s2_m4": 0.0058,
+   "faces": 21716
+  },
+  {
+   "id": 5,
+   "support_class": "mixed_rock_3",
+   "alpha_N_s2_m4": 0.0058,
+   "faces": 40465
+  },
+  {
+   "id": 6,
+   "support_class": "services_obstructing",
+   "alpha_N_s2_m4": 0.01,
+   "faces": 44052
+  },
+  {
+   "id": 7,
+   "support_class": "services_obstructing_2",
+   "alpha_N_s2_m4": 0.0058,
+   "faces": 55322
+  }
+ ],
+ "batchTable_extension": {
+  "semantic_id": "uint8 index into classes",
+  "support_class": "string",
+  "alpha": "float32 N s^2 m^-4",
+  "roughness_proxy": "float32 local normal dispersion",
+  "material": "string inferred from texture moments"
+ }
+}

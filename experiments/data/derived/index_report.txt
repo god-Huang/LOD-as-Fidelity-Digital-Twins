@@ -1,0 +1,28 @@
+3D Tiles LOD index audit
+============================================================
+blocks (root children)     : 73
+tree nodes total           : 16744
+b3dm tiles total           : 16744
+total bytes                : 2473.1 MB
+global bbox lo             : [ -299.17 -1114.22   -78.75]
+global bbox hi             : [ 289.12 1136.94   87.24]
+global extent (m)          : [ 588.3  2251.16  165.99]
+bounding-box volume        : 219.828 Mm^3
+index time                 : 0.6 s
+
+level histogram (b3dm tiles):
+       tiles          MB
+level                   
+14        73   37.805472
+15        27   34.138904
+16        60   57.140668
+17        65   93.995516
+18        73  213.548368
+19       213  194.137088
+20       778  187.897148
+21      2812  460.776132
+22      8702  973.856720
+23      3941  219.829632
+
+geometricError values observed: 0, 0.234, 0.469, 0.938, 1.88, 3.75, 7.5, 15, 30, 60
+refine modes observed       : REPLACE

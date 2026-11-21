@@ -1,0 +1,7 @@
+polylines 121  raw length 15025.5 m
+planarised nodes 1280 chains 1330 branches 441
+stations 3445 at ds=5.0 m
+components 896; top-5 node counts [330, 14, 2, 4, 2]
+top-5 component lengths [11508.3, 2182.1, 1781.2, 224.5, 176.5] m
+branch class counts {'主巷道': 242, '岔道': 121, '斜坡道': 78}
+largest-component length 11508.3 m of 16660.4 m (69.1%)

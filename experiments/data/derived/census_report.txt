@@ -1,0 +1,5 @@
+FULL MESH CENSUS (exact, no sampling)
+========================================================================
+total tiles        : 16744
+total vertices     : 251,075,787
+total triangles    : 228,918,203

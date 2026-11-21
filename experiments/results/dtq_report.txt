@@ -1,0 +1,47 @@
+DT-Q: a non-compensatory composite index for a multi-fidelity digital twin
+================================================================================================================
+G = exp(-(excess HD95 / 0.05 m)^2)   S = confident class share x mean posterior
+P = 1 - nRMSE(active branch airflows) E = log-budget saved
+C = 1 - |PICP-0.95|/0.95 - ECE/0.10   (split conformal, branch-disjoint)
+DT-Q = weighted geometric mean, weights {'G': 0.25, 'S': 0.15, 'P': 0.35, 'E': 0.1, 'C': 0.15} (non-compensatory by construction)
+
+                config       MB      G      S      P      E      C    DTQ  decision_correct  top_share
+         LOD-ROM8 @L18 214.1890 0.7921 0.8423 0.9871 0.5228 0.7880 0.8277            0.9065     0.5675
+         LOD-ROM8 @L19 318.7213 0.9883 0.8423 0.9565 0.4133 0.6283 0.8168            0.9039     0.1000
+            native L18 213.5484 0.7921 0.8423 0.9449 0.5228 0.7880 0.8151            0.7870     0.0000
+         LOD-ROM8 @L20 424.6909 0.9996 0.8423 0.9939 0.3342 0.6361 0.8143            0.9636     0.3150
+            native L19 317.7680 0.9883 0.8423 0.9428 0.4133 0.6283 0.8127            0.8026     0.0000
+CP-NO trained L14 @L18 213.5484 0.7921 0.8423 0.9129 0.5228 0.7880 0.8054               NaN     0.0000
+            native L20 423.4206 0.9996 0.8423 0.9625 0.3342 0.6361 0.8052            0.8442     0.0000
+CP-NO trained L14 @L19 317.7680 0.9883 0.8423 0.9128 0.4133 0.6283 0.8036               NaN     0.0000
+CP-NO trained L14 @L20 423.4206 0.9996 0.8423 0.9128 0.3342 0.6361 0.7904               NaN     0.0000
+         LOD-ROM8 @L21 700.6969 1.0000 0.8423 0.9866 0.1962 0.6106 0.7654            0.9351     0.0000
+            native L21 698.6011 1.0000 0.8423 0.9759 0.1962 0.6106 0.7625            0.8519     0.0000
+CP-NO trained L14 @L21 698.6011 1.0000 0.8423 0.9128 0.1962 0.6106 0.7449               NaN     0.0000
+         LOD-ROM8 @L17  94.7325 0.2687 0.8423 0.9887 0.7477 0.7717 0.6530            0.9091     0.0175
+            native L17  94.4492 0.2687 0.8423 0.9409 0.7477 0.7717 0.6418            0.7429     0.0000
+CP-NO trained L14 @L17  94.4492 0.2687 0.8423 0.9129 0.7477 0.7717 0.6350               NaN     0.0000
+         LOD-ROM8 @L16  58.1329 0.0429 0.8423 0.9870 0.8822 0.6490 0.4085            0.8519     0.0000
+            native L16  57.9590 0.0429 0.8423 0.9359 0.8822 0.6490 0.4010            0.7195     0.0000
+CP-NO trained L14 @L16  57.9590 0.0429 0.8423 0.9129 0.8822 0.6490 0.3975               NaN     0.0000
+CP-NO trained L14 @L15  42.6176 0.0019 0.8423 0.9129 0.9670 0.4925 0.1771               NaN     0.0000
+         LOD-ROM8 @L15  42.7455 0.0019 0.8423 0.8883 0.9670 0.4925 0.1754            0.8078     0.0000
+
+conformal calibration by level:
+ level  conformal_quantile   PICP  nominal   MPIW    ECE  C_raw      C
+    14              0.9307 0.9343     0.95 1.9296 0.0669 0.3150 0.3150
+    15              0.8885 0.9367     0.95 1.8442 0.0494 0.4925 0.4925
+    16              0.8110 0.9367     0.95 1.7007 0.0337 0.6490 0.6490
+    17              0.8105 0.9351     0.95 1.7057 0.0213 0.7717 0.7717
+    18              0.7448 0.9424     0.95 1.5326 0.0204 0.7880 0.7880
+    19              0.5881 0.9512     0.95 1.2209 0.0370 0.6283 0.6283
+    20              0.4517 0.9584     0.95 0.9140 0.0355 0.6361 0.6361
+    21              0.2968 0.9432     0.95 0.6146 0.0382 0.6106 0.6106
+    22              0.0143 0.9367     0.95 0.0289 0.3321 0.0000 0.0000
+    23              0.0000 1.0000     0.95 0.0000 0.5000    NaN    NaN
+
+external validity: Spearman rho between DT-Q and the fraction of branches whose airflow decision matches the fine-fidelity answer = 0.088 (n = 19 configurations)
+accuracy-only variant (economy dimension removed): rho = 0.535; native-LOD configurations only, full index: rho = 0.115
+cost-discounted criterion (correct decisions per decade of streamed volume): rho = -0.174 full set, -0.224 for native LOD alone
+value form of the criterion (correct decisions per log10 byte): rho = -0.174 - DT-Q is a value index, so the raw decision rate, which increases monotonically with cost, is the wrong target for it
+weight perturbation (400 Dirichlet draws, concentration 12): top-ranked configuration = LOD-ROM8 @L18 with share 0.568

@@ -1,0 +1,5 @@
+claim,diff_failure_rate,ci_lo,ci_hi,n_common_failing,interpretation
+MF-POD8-surveyed @L16 vs native @L21,0.0,-0.03636363636363636,0.03376623376623378,34,equivalence (interval contains zero)
+MF-POD8-surveyed @L14 vs native @L18,0.0025974025974025983,-0.038961038961038946,0.04415584415584414,51,equivalence (interval contains zero)
+MF-POD8-surveyed @L18 vs native @L21,-0.054545454545454536,-0.08831168831168831,-0.020779220779220772,24,difference (interval excludes zero)
+MF-POD8-oracle @L16 vs native @L21,-0.09090909090909091,-0.12474025974025973,-0.057142857142857134,15,difference (interval excludes zero)

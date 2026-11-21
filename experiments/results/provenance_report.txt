@@ -1,0 +1,33 @@
+Provenance: machine, libraries and measured cost
+================================================================================================
+              kind                                           key                                                              value
+          hardware                                      platform                                          Windows-11-10.0.26200-SP0
+          hardware                                           cpu                  AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD
+          hardware                                 cores_logical                                                                  8
+          hardware                                        ram_GB                                                               31.1
+          hardware                                           gpu                                 NVIDIA GeForce RTX 5070, 12227 MiB
+          hardware                                      note_gpu all reported experiments ran on CPU; the GPU is present but unused
+           library                                        python                                                             3.14.0
+           library                                         numpy                                                              2.3.5
+           library                                        pandas                                                              3.0.1
+           library                                         scipy                                                             1.18.1
+           library                                      networkx                                                                3.7
+           library                                    matplotlib                                                             3.11.0
+           library                                         torch                                                         2.15.0+cpu
+           library                                           PIL                                                             12.3.0
+           library                                       DracoPy                                                            unknown
+  runtime_from_log                                         di_no                                                            497.0 s
+  runtime_from_log                                   di_operator                                                            492.0 s
+  runtime_from_log                                           eal                                                            834.0 s
+  runtime_from_log                              run_25_crossdisc                                                             21.0 s
+  runtime_from_log                                      semantic                                                             92.0 s
+measured_primitive ventilation_model_load_plus_reference_solve_s                                                            0.027 s
+measured_primitive                              network_solve_ms                                                            24.8 ms
+measured_primitive                      load_one_section_level_s                                                            0.000 s
+measured_primitive               section_metrics_200_stations_ms                                                             1.7 ms
+         artefacts                                       results                                                  69 files, 0.66 MB
+         artefacts                                  data\derived                                                 30 files, 73.64 MB
+         artefacts                                       figures                                                  23 files, 2.95 MB
+         artefacts                                          logs                                                   25 files, 0.5 MB
+
+the four heavy stages (02 census, 04 audit, 09 reduction, 14 refinement) dominate the programme; their times are taken from their own log lines where present and marked as such, and the primitives above are timed live so that a reader can extrapolate.

@@ -1,0 +1,47 @@
+Inference for the acquisition comparison: paired tests, Holm correction, best policy
+======================================================================================================================
+ level           scale strategy  n_seed   mean  mean_random    diff     se        t  df  p_raw  p_holm note
+    14    equal-branch  DECL_ge       8 0.1410       0.1356  0.0053 0.0048   1.1205   7 0.2995  1.0000     
+    14    equal-branch      EAL       8 0.1264       0.1356 -0.0092 0.0048  -1.9267   7 0.0954  0.4770     
+    14    equal-branch      GEO       8 0.1412       0.1356  0.0055 0.0048   1.1633   7 0.2828  1.0000     
+    14    equal-branch      SEN       8 0.1310       0.1356 -0.0046 0.0048  -0.9578   7 0.3701  1.0000     
+    14    equal-branch      UNC       8 0.1405       0.1356  0.0049 0.0048   1.0200   7 0.3417  1.0000     
+    16    equal-branch  DECL_ge       8 0.0639       0.0603  0.0036 0.0016   2.3282   7 0.0528  0.2110     
+    16    equal-branch      EAL       8 0.0604       0.0603  0.0001 0.0016   0.0381   7 0.9707  1.0000     
+    16    equal-branch      GEO       8 0.0534       0.0603 -0.0069 0.0016  -4.4574   7 0.0029  0.0147     
+    16    equal-branch      SEN       8 0.0605       0.0603  0.0002 0.0016   0.0968   7 0.9256  1.0000     
+    16    equal-branch      UNC       8 0.0636       0.0603  0.0033 0.0016   2.1203   7 0.0717  0.2151     
+    18    equal-branch  DECL_ge       8 0.0549       0.0529  0.0020 0.0007   2.7577   7 0.0282  0.0564     
+    18    equal-branch      EAL       8 0.0455       0.0529 -0.0074 0.0007 -10.0772   7 0.0000  0.0001     
+    18    equal-branch      GEO       8 0.0401       0.0529 -0.0127 0.0007 -17.3386   7 0.0000  0.0000     
+    18    equal-branch      SEN       8 0.0519       0.0529 -0.0010 0.0007  -1.3503   7 0.2190  0.2190     
+    18    equal-branch      UNC       8 0.0418       0.0529 -0.0111 0.0007 -15.0721   7 0.0000  0.0000     
+    14 effort-weighted  DECL_ge       8 0.1407       0.1380  0.0027 0.0018   1.5107   7 0.1746  0.3297     
+    14 effort-weighted      EAL       8 0.1252       0.1380 -0.0127 0.0018  -7.0103   7 0.0002  0.0008     
+    14 effort-weighted      GEO       8 0.1422       0.1380  0.0043 0.0018   2.3404   7 0.0518  0.1554     
+    14 effort-weighted      SEN       8 0.1245       0.1380 -0.0134 0.0018  -7.4048   7 0.0001  0.0007     
+    14 effort-weighted      UNC       8 0.1408       0.1380  0.0028 0.0018   1.5510   7 0.1648  0.3297     
+    16 effort-weighted  DECL_ge       8 0.0639       0.0607  0.0032 0.0020   1.6223   7 0.1488  0.5951     
+    16 effort-weighted      EAL       8 0.0598       0.0607 -0.0009 0.0020  -0.4533   7 0.6641  1.0000     
+    16 effort-weighted      GEO       8 0.0503       0.0607 -0.0104 0.0020  -5.3418   7 0.0011  0.0054     
+    16 effort-weighted      SEN       8 0.0598       0.0607 -0.0009 0.0020  -0.4814   7 0.6449  1.0000     
+    16 effort-weighted      UNC       8 0.0634       0.0607  0.0027 0.0020   1.3615   7 0.2155  0.6466     
+    18 effort-weighted  DECL_ge       8 0.0550       0.0528  0.0022 0.0009   2.5044   7 0.0407  0.1222     
+    18 effort-weighted      EAL       8 0.0539       0.0528  0.0012 0.0009   1.2979   7 0.2355  0.2355     
+    18 effort-weighted      GEO       8 0.0393       0.0528 -0.0134 0.0009 -15.0249   7 0.0000  0.0000     
+    18 effort-weighted      SEN       8 0.0548       0.0528  0.0021 0.0009   2.3135   7 0.0539  0.1222     
+    18 effort-weighted      UNC       8 0.0400       0.0528 -0.0127 0.0009 -14.2615   7 0.0000  0.0000     
+
+best policy per level and budget scale (lowest mean AULC):
+                      strategy    mean  mean_random
+scale           level                              
+effort-weighted 14         SEN  0.1245       0.1380
+                16         GEO  0.0503       0.0607
+                18         GEO  0.0393       0.0528
+equal-branch    14         EAL  0.1264       0.1356
+                16         GEO  0.0534       0.0603
+                18         GEO  0.0401       0.0529
+
+families for the Holm correction are the five non-random strategies within one (scale, base level) block; n = 8 seeds gives df = 7 for the paired test.
+
+consequence for the manuscript: at lambda = 14 the proposed combination is the point estimate but its advantage over random is not significant on the equal-branch scale (p_holm > 0.05) and IS significant once survey effort is weighted; at lambda = 16 and 18 the disagreement signal alone is the best policy. The abstract must therefore state a policy SWITCH, not a single winner.

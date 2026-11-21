@@ -1,0 +1,16 @@
+{
+  "title": "LOD-as-Fidelity Digital Twins: Reduced-Order Encoding, Conservation-Preserving Surrogates and the Boundary Between Inference and Measurement",
+  "version": "2.0.0",
+  "upload_type": "software",
+  "language": "eng",
+  "license": "mit",
+  "communities": [{"identifier": "mining-engineering"}, {"identifier": "reproducible-research"}],
+  "keywords": ["digital twin", "level of detail", "3D Tiles", "mine ventilation",
+                 "reduced-order model", "operator learning", "reproducibility"],
+  "authors": [{"name": "Huang, Anqi", "affiliation": "School of Intelligent Manufacturing and Automotive Engineering, Chongqing Vocational College of Transportation, Chongqing 402247, China"}],
+  "description": "Code, derived data and result tables behind the article: 31 pipeline stages, the derived artefacts they consume and produce, every result table and all twelve figures. The raw 3D Tiles survey is proprietary and not included, so stages 01-02 need an equivalent product; the chain from stage 03 runs as shipped.",
+  "related_identifiers": [
+    {"scheme": "doi", "identifier": "10.xxxx/ARTICLE-DOI-TO-BE-INSERTED",
+     "relation": "isSupplementTo", "resource_type": "publication-article"}
+  ]
+}

@@ -1,0 +1,34 @@
+Texture-and-geometry semantics for an unlabelled scan product
+====================================================================================================
+described 400,000 faces drawn from 2995 tile textures in 180 tiles spanning LOD levels 14-23
+BIC-selected k = 8; silhouette 0.145; BIC(k)=-7592614, BIC(k-1)=-7455898
+stability: ARI over 5 initialisations 0.981 (sd 0.015); ARI on disjoint texture halves 0.916
+semantic confidence: mean posterior 0.961, share of faces assigned decisively 0.878
+external consistency with the delivered CAD roadway category: Cramer's V = 0.101, chi2 = 696.2, p = 1.70e-139
+
+         support_class  faces    share  texture_value   saturation  mean_dip_deg  median_face_area_m2  normal_dispersion  alpha_N_s2_m4  crown_fraction
+  services_obstructing  44052 0.110130       0.038193 4.334963e-01     52.772348             0.008327           0.500485         0.0100        0.275538
+          floor_debris  80221 0.200552       0.000000 0.000000e+00     74.992675             0.008461           0.252396         0.0078        0.000000
+            mixed_rock  14303 0.035757       0.358052 4.346357e-09     50.806291             0.012080           0.530529         0.0058        0.304831
+          mixed_rock_2  21716 0.054290       0.230401 1.380888e-01     52.327446             0.012831           0.522964         0.0058        0.274682
+services_obstructing_2  55322 0.138305       0.040369 5.293725e-01     36.089871             0.010730           0.714611         0.0100        0.469578
+        floor_debris_2  42442 0.106105       0.041629 5.239680e-01     75.816027             0.008496           0.234598         0.0078        0.000000
+         aperture_void 101479 0.253698       0.000000 0.000000e+00     30.552077             0.012773           0.701381         0.0060        0.595443
+          mixed_rock_3  40465 0.101163       0.022403 9.933639e-08     52.743518             0.009534           0.508823         0.0058        0.275127
+
+effect of replacing one-alpha-per-roadway-category with semantics-derived alpha:
+quantities                           branch airflow and mine head
+nRMSE_semantics_vs_classblind                            0.028806
+frac_branches_gt5pct                                     0.335196
+max_dQ_m3s                                               1.659497
+Re_classblind                                            0.002818
+Re_semantics                                             0.004205
+rel_change_Re                                            0.492477
+head_classblind_Pa                                      10.143426
+head_semantics_Pa                                       15.138835
+rel_change_head_Pa                                       0.492477
+air_power_change_ratio                                   1.492477
+rel_change_Re_at_alpha_scale_0.75                        0.119358
+rel_change_Re_at_alpha_scale_1.25                        0.865597
+
+runtime 108 s

@@ -1,0 +1,31 @@
+Reproduction and stability study
+======================================================================================================================
+quantity                                                            n       mean        sd          95% CI (mean)  Kendall W  identical order
+----------------------------------------------------------------------------------------------------------------------
+coverage error excess over the sampling floor [m]                  72     0.0447    0.0562       [0.0396, 0.0496]      0.939             0.86
+apparent surface area ratio to the finest cut                      72     1.0605    0.0044       [1.0519, 1.0692]      0.722             0.17
+estimator noise floor (reference compared with itself)             73     0.0742    0.0420       [0.0645, 0.0838]          -                -
+within-block seed sd of the coverage error                          5     0.0001    0.0001                      -          -                -
+solver verification tests passed                                   10    10.0000       nan                      -          -                -
+dA_med (level mean over branches)                                  10     0.0424    0.0419                      -          -                -
+nRMSE_Q_active (level mean over branches)                          10     0.0569    0.0474                      -          -                -
+frac_branches_gt5pct (level mean over branches)                    10     0.1912    0.1175                      -          -                -
+fraction of branches with airflow error > 5 % (L14)              3000     0.7205    0.0237       [0.7179, 0.7232]          -                -
+ID_native_LOD: median section-area error, modes in (0, 8)           9     0.0442    0.0404       [0.0178, 0.0705]          -                -
+MF-POD: median section-area error, modes in (0, 8)                  9     0.0012    0.0010       [0.0006, 0.0019]          -                -
+MF-POD-pred: median section-area error, modes in (0, 8)             9     0.0434    0.0357       [0.0201, 0.0668]          -                -
+CP-NO nRMSE of branch airflows (zero-shot)                          3     0.0872    0.0014       [0.0856, 0.0888]          -                -
+unconstrained MLP nRMSE (no conservation structure)                 3     0.0884    0.0001       [0.0883, 0.0885]          -                -
+FNO: median relative section-area error                           108     0.1003    0.0453       [0.0918, 0.1089]          -                -
+ID_native: median relative section-area error                       9     0.0425    0.0407       [0.0160, 0.0691]          -                -
+AULC of the RANDOM refinement policy                               24     0.0829    0.0390       [0.0674, 0.0985]          -                -
+AULC of the GEO refinement policy                                  24     0.0782    0.0458       [0.0599, 0.0966]          -                -
+AULC of the DECL_ge refinement policy                              24     0.0866    0.0394       [0.0708, 0.1024]          -                -
+AULC of the UNC refinement policy                                  24     0.0820    0.0432       [0.0647, 0.0993]          -                -
+AULC of the SEN refinement policy                                  24     0.0811    0.0362       [0.0667, 0.0956]          -                -
+AULC of the EAL refinement policy                                  24     0.0774    0.0359       [0.0631, 0.0918]          -                -
+cluster stability, Adjusted Rand Index over initialisations         5     0.9815    0.0145                      -          -                -
+----------------------------------------------------------------------------------------------------------------------
+n = independent repetitions (seeds, folds, blocks or bootstrap draws as stated)
+Kendall W = agreement between repetitions on the RANKING of fidelity levels
+identical order = share of repetitions reproducing the mean ranking exactly

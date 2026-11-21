@@ -1,0 +1,21 @@
+Estimator-floor propagation, paired versus unpaired intervals and ladder monotonicity
+================================================================================================================
+The coverage statistic is a per-block PAIRED difference (identical reference query set
+for every level, fixed seeds), so the floor's block-to-block variation is inside the
+interval; the unpaired column is the conservative bound if the pairing is disbelieved.
+
+ level  n_blocks   excess  ci_paired_lo  ci_paired_hi  ci_unpaired_lo  ci_unpaired_hi  corr_level_with_floor  var_ratio_paired_over_unpaired
+    14        72 0.053846      0.049839      0.057810        0.040400        0.067292               0.911471                        0.088655
+    15        72 0.048663      0.044496      0.052771        0.035913        0.061414               0.900383                        0.107319
+    16        72 0.038978      0.035383      0.042227        0.026733        0.051223               0.943463                        0.080912
+    17        72 0.029391      0.026575      0.032229        0.016997        0.041785               0.964147                        0.054656
+    18        72 0.016038      0.014087      0.018108        0.002911        0.029165               0.978261                        0.023910
+    19        73 0.004925      0.003835      0.006030       -0.008548        0.018399               0.993683                        0.006620
+    20        73 0.001073      0.000744      0.001500       -0.012496        0.014642               0.999274                        0.000779
+    21        73 0.000276      0.000123      0.000536       -0.013330        0.013883               0.999704                        0.000307
+    22        73 0.000024      0.000012      0.000038       -0.013613        0.013661               0.999999                        0.000001
+
+monotone (non-increasing) excess ladder: P = 0.964 strictly, 0.964 allowing a 1e-6 m tolerance
+Spearman rho(level, excess) over bootstrap replicates: median -1.0000, 2.5-97.5 % [-1.0000, -0.9833]
+
+consequence for the manuscript: the ordering claim is supported by the rank statistic, not by non-overlap of pointwise intervals at the fine end, where excess is comparable to the paired standard error. The text must therefore say 'consistent with monotone (rho = ...)' rather than 'non-overlapping confidence intervals'.

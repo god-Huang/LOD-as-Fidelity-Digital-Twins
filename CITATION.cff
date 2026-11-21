@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software or the derived data, please cite it as below."
+title: "LOD-as-Fidelity Digital Twins: Reduced-Order Encoding, Conservation-Preserving Surrogates and the Boundary Between Inference and Measurement"
+authors:
+  - family-names: Huang
+    given-names: Anqi
+    affiliation: "School of Intelligent Manufacturing and Automotive Engineering, Chongqing Vocational College of Transportation, Chongqing 402247, China"
+repository-code: "https://github.com/god-Huang/LOD-as-Fidelity-Digital-Twins"
+version: "2.0.0"
+date-released: "2026-11-21"
+license: MIT
+keywords:
+  - digital twin
+  - level of detail
+  - 3D Tiles
+  - mine ventilation
+  - reduced-order model
+  - physics-informed operator learning
+  - reproducibility

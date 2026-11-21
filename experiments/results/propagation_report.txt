@@ -1,0 +1,33 @@
+Fidelity propagation: scan LOD -> section -> Atkinson resistance -> network solution
+================================================================================================================
+domain: 385 branches, 330 nodes, 11508 m of roadway, 3290 stations at 5 m
+driving condition: controlled total quantity 60.0 m^3/s between the two extremal nodes of the largest connected component
+reference fidelity: level 23 (leaf cut). alpha by roadway class: {'主巷道': 0.0045, '斜坡道': 0.0055, '岔道': 0.0075} N s^2 m^-4
+
+ lvl       MB    cov  dA_med  dP_med  dR_med  nRMSE_Q    R2_Q  err_Re  err_dp    >5%   maxdQ
+----------------------------------------------------------------------------------------------------------------
+  14     37.8  1.000  0.1078  0.9851  0.0599  0.2146  0.61812   0.14123  0.9774  0.0105  0.330  11.472   0.001
+  15     42.6  1.000  0.0957  0.9646  0.0538  0.1742  0.56458   0.12949  0.9812  0.0543  0.325  11.895   0.001
+  16     58.0  1.000  0.0802  0.9040  0.0467  0.1130  0.28506   0.06408  0.9952  0.0228  0.281   5.450   0.001
+  17     94.4  1.000  0.0651  0.8841  0.0440  0.0932  0.26384   0.05909  0.9959  0.0236  0.257   4.808   0.001
+  18    213.5  1.000  0.0445  0.8150  0.0373  0.0677  0.24714   0.05515  0.9964  0.0876  0.213   5.452   0.134
+  19    317.8  1.000  0.0157  0.5889  0.0143  0.0118  0.24879   0.05722  0.9963  0.1351  0.197   6.142   0.218
+  20    423.4  1.000  0.0083  0.4075  0.0066  0.0036  0.16241   0.03751  0.9984  0.1125  0.156   2.944   0.219
+  21    698.6  1.000  0.0067  0.3648  0.0041  0.0029  0.10530   0.02407  0.9993  0.0767  0.148   2.396   0.245
+  22   1289.8  1.000  0.0000  0.0170  0.0000  0.0000  0.00672   0.00155  1.0000  0.0010  0.005   0.161   0.799
+  23   1423.7  1.000  0.0000  0.0000  0.0000  0.0000  0.00000   0.00000  1.0000  0.0000  0.000   0.000   1.000
+----------------------------------------------------------------------------------------------------------------
+spatially uncorrelated friction uncertainty (per-branch lognormal alpha, +/-30% spread, 200 Monte-Carlo draws):
+   nRMSE_Q = 0.01672, nRMSE over branches with |Q|>1 m^3/s = 0.00567,   fraction of branches with sd(Q)/|Q| > 5 % = 0.457
+   relative sd of mine resistance = 0.1072, of head = 0.1072
+   (uniform alpha scaling: max branch-flow change = 4.259e-06 m^3/s, i.e. the flow distribution is exactly invariant; only head and resistance scale)
+critical LOD for <5 % error in the mine equivalent resistance: level 14
+critical LOD at which the branch-airflow error falls below the friction-uncertainty band: level 22
+ident% = fraction of stations whose level-lambda section is numerically identical to the reference; the level-22 cut already coincides with the level-23 leaf cut over most of the network, so levels 22-23 are not independent rungs
+
+dA_med / dP_med  : median relative error of section area / perimeter over stations
+dR_med           : median relative error of branch Atkinson resistance
+nRMSE_Q          : sqrt(sum (dQ)^2) / Q_total, normalised airflow error
+R2_Q             : coefficient of determination of branch flows against the reference
+err_Re / err_dp  : relative error of the mine equivalent resistance / of the head
+>5%              : fraction of branches whose airflow deviates by more than 5 %

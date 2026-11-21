@@ -1,0 +1,6 @@
+task,stage,median_ms,p95_ms,n_rep,ratio_to_full_pipeline
+"native solve at a fidelity level (assemble-free, hot)",Newton solve,63.38320000213571,66.35933500219835,200,0.798958556671551
+"section metrics + resistance + solve, from station fields",full pipeline,50.640549990930595,53.0187600190402,200,1.0
+resistance vector + solve (reference geometry),solve_R,24.22635001130402,25.605359995097388,200,2.090308691457925
+fidelity-codec decode of 3290 stations x 8 modes,matrix product + metrics,0.46335000661201775,0.558589989668689,200,109.29221812515055
+"operator forward + conservation-preserving reconstruction (architecture of 12_di_operator, cin=7, cycle dim 56)",inference,0.15380000695586205,0.29456499905791117,200,329.26233875570347
